@@ -9,7 +9,6 @@ import com.hazelcast.core.HazelcastInstance;
 import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
-import java.util.stream.Collectors;
 
 public class KeyValueHazelcastClient implements KeyValueDatabaseConnector, KeyValueDatabaseInstance, KeyValueDatabaseProcessor{
 
