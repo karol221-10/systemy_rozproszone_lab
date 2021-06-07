@@ -85,7 +85,7 @@ public class KeyValueFirestoreClient implements KeyValueDatabaseConnector, KeyVa
     public <T> List<T> findBy(String collection, String fieldName, String fieldValue, Class<T> className) {
         try {
             return db.collection(collection).whereEqualTo(fieldName, fieldValue).get().get().getDocuments().stream()
-                    .map(object -> object.toObject(className))
+                    .map(object -> objectMapper.convertValue(object.getData(), className))
                     .collect(Collectors.toList());
         } catch (InterruptedException | ExecutionException e) {
             throw new RuntimeException(e);
