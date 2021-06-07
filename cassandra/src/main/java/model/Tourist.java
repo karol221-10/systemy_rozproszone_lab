@@ -8,11 +8,10 @@ import java.io.Serializable;
 @Builder
 @Setter
 @EqualsAndHashCode
-@NoArgsConstructor(access = AccessLevel.PRIVATE)
+@NoArgsConstructor(access = AccessLevel.PUBLIC)
 @AllArgsConstructor(access = AccessLevel.PRIVATE)
-public class Client {
-    private static final long serialVersionUID = 1L;
-    private String _id;
+public class Tourist {
+    private String id;
     private String name;
     private String surname;
     private Integer age;
